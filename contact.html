@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>contacts</title>
+<title>AstroCeylon</title>
 <meta charset="utf-8">    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/2A5FE845-4F05-AE49-AC1C-90FFA297B43B/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/B34B792AFF09-C1CA-94EA-50F4-548EF5A2/abn/main.css"/><script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -27,7 +27,7 @@
 <script src="js/modal.js"></script>  
 <script src="js/bootstrap-filestyle.js"></script> 
 <script src="js/jquery.ui.totop.js"></script>
-<script src='//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false'></script>
+<script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBqnZKQ0iYg4HfbzIQOBPGLr8VDYB-9M_Q&callback=initMap'></script>
 <!--[if (gt IE 9)|!(IE)]><!-->
 <script src="js/wow/wow.js"></script>
 <script src="js/wow/device.min.js"></script>
@@ -84,7 +84,7 @@
             </ul>
         </header>
         <div class="logo_box indent">
-            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="img/logo.png" alt="logo"></a></h1>
+            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="img/mainLogo.png" alt="logo"></a></h1>
         </div>
     </div>
 </div>
@@ -100,49 +100,50 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <h2 class="wow fadeIn">Addresses</h2>
+                    <h2 class="wow fadeIn">Meet Us</h2>
                     <div class="info">
-                        <h3>Address 1:</h3>
-                        <p>The Company Name Inc.<br>8901 Marmora Road, Glasgow, D04 89GR.</p>
-                        <h3>Telephones:</h3>
-                        <p>+1 800 559 6580<br>+1 800 603 6035</p>
-                        <h3>Address 2:</h3>
-                        <p>The Company Name Inc.<br>9863 - 9867 Mill Road, Cambridge, MG09</p>
+                        <h3>Address | ලිපිනය</h3>
+                        <p>AstroCeylon Astrology Service | ජොතිෂය සේවය<br>20/23 A, Watekeyala Road, Thalapathpitiya, Nugegoda<br><strong>20/23 A, වැටකෙවේල පාර, තලපත්පිටිය, නුගේගොඩ.</strong><br/>Sri Lanka</p>
+                        <h3>Telephones | දුරකතන</h3>
+                        <p>+94 71 8021 129<br>+94 11 2779 024</p>
+                        <h3>Email | විද්යුත් තැපෑල</h3>
+                        <p>The AstroCeylon Inc.<br>නුගේගොඩ , Sri Lanka</p>
+                        <p>The AstroCeylon Inc.<br>නුගේගොඩ , Sri Lanka</p>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8">
-                    <h2 class="wow fadeIn" data-wow-delay="0.1s">Contact form</h2>
-                    <form id="contact-form">
+                    <h2 class="wow fadeIn" data-wow-delay="0.1s">Contact form | රැදෙන්න</h2>
+                    <form id="contact-form" action="/contact_email.php" method="post">
                           <div class="contact-form-loader"></div>
                           <fieldset>
                             <label class="name form-div-1">
-                            <strong>Name*</strong>
+                            <strong>සම්පූර්ණ නම | Name*</strong>
                               <input type="text" name="name" placeholder="" value="" data-constraints="@Required @JustLetters"  />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid name.</span>
+                              <span class="empty-message">*This field is required | අවශ්‍ය පිරවුම.</span>
+                              <span class="error-message">*This is not a valid name | වලංගු නැත.</span>
                             </label>
                             <label class="email form-div-2">
-                            <strong>E-mail*</strong>
+                            <strong>විද්යුත් තැපෑල | E-mail*</strong>
                               <input type="text" name="email" placeholder="" value="" data-constraints="@Required @Email" />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid email.</span>
+                              <span class="empty-message">*This field is required | අවශ්‍ය පිරවුම.</span>
+                              <span class="error-message">*This is not a valid email | වලංගු නැත .</span>
                             </label>
                             <label class="phone form-div-3">
-                            <strong>Phone</strong>
+                            <strong>දුරකතන | Phone* </strong>
                               <input type="text" name="phone" placeholder="" value="" data-constraints="@JustNumbers" />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid phone.</span>
+                              <span class="empty-message">*This field is required | අවශ්‍ය පිරවුම.</span>
+                              <span class="error-message">*This is not a valid phone | වලංගු නැත.</span>
                             </label>
                             <label class="message form-div-4">
-                            <strong>Message*</strong>
+                            <strong>පණිවුඩය | Message*</strong>
                               <textarea name="message" placeholder="" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*The message is too short.</span>
+                              <span class="empty-message">*This field is required | අවශ්‍ය පිරවුම.</span>
+                              <span class="error-message">*The message is too short | බොහෝ කෙටි.</span>
                             </label>
                             <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
                             <div class="btns">
-                                <a href="#" data-type="submit" class="btn-default btn4"><span></span>Submit</a>
-                                <p>* required fields</p>
+                                <input data-type="submit" type="submit" class="btn-default btn4"><span></span>සූදානම්  | Submit</input>
+                                <p>* required fields | අවශ්‍ය පිරවුම</p>
                             </div>
                           </fieldset> 
                           <div class="modal fade response-message">
@@ -167,8 +168,8 @@
 <!--footer-->
 <footer> 
     <div class="container">
-        <figure><img src="img/foo_logo.png" alt=""></figure>
-        <p>&copy; <em id="copyright-year"></em> <span>|</span> <a href="index-5.html">Privacy Policy</a></p>
+        <figure><img src="img/mainLogofooter.png" alt=""></figure><br/>
+        <p>&copy; <em id="copyright-year"></em> <span>|</span> <a href="policy.html">Privacy Policy</a></p>
     </div>
 </footer>
 <script src="js/bootstrap.min.js"></script>
@@ -177,12 +178,12 @@
           google_api_map_init(); 
           function google_api_map_init(){ 
             var map; 
-            var coordData = new google.maps.LatLng(parseFloat(40.646197), parseFloat(-73.9724068,14)); 
-            var markCoord1 = new google.maps.LatLng(parseFloat(40.643180), parseFloat(-73.9874068,14)); 
-             var markCoord2 = new google.maps.LatLng(parseFloat(40.6422180), parseFloat(-73.9784068,14)); 
-             var markCoord3 = new google.maps.LatLng(parseFloat(40.6482180), parseFloat(-73.9724068,14)); 
-             var markCoord4 = new google.maps.LatLng(parseFloat(40.6442180), parseFloat(-73.9664068,14)); 
-             var markCoord5 = new google.maps.LatLng(parseFloat(40.6379180), parseFloat(-73.9552068,14)); 
+            var coordData = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9236801,14)); 
+            var markCoord1 = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9236801,14)); 
+             var markCoord2 = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9346801,14)); 
+             var markCoord3 = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9209259,14)); 
+             var markCoord4 = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9209259,14)); 
+             var markCoord5 = new google.maps.LatLng(parseFloat(6.8635502), parseFloat(79.9209259,14)); 
             var marker; 
  
             var styleArray = [
@@ -311,3 +312,4 @@
 </script>
 </body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
 </html>
+<!--AIzaSyBqnZKQ0iYg4HfbzIQOBPGLr8VDYB-9M_Q-->

@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
+<link rel="stylesheet" href="css/clock.css">
+<link rel="stylesheet" href="css/digitalClock.css">
 <!--JS-->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -27,13 +29,31 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <script src="js/wow/wow.js"></script>
 <script src="js/wow/device.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/clock.js"></script>
+<script>
+    moment().format();
+</script>
 <script>
     $(document).ready(function () {       
       if ($('html').hasClass('desktop')) {
         new WOW().init();
       }   
+        var interval = setInterval(function() {
+        var momentNow = moment();
+        $('#date-part').html(momentNow.format('YYYY MMMM DD') + ' '
+                            + momentNow.format('dddd')
+                             .substring(0,3).toUpperCase());
+        $('#time-part').html(momentNow.format('A hh:mm:ss'));
+    }, 100);
+    
+    $('#stop-interval').on('click', function() {
+        clearInterval(interval);
     });
+    });
+    
 </script>
+    
 <!--<![endif]-->
 
 <!--[if lt IE 9]>
@@ -50,6 +70,7 @@
   <![endif]-->
 </head>
 <body>
+    
 <div class="main">
     <!--header-->
     <div class="container">
@@ -57,7 +78,7 @@
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li class="active"><a href="index.html">home | මුල් පිටුව</a></li>
-                    <li class="sub-menu"><a href="index-1.html">about | අපි ගැන</a><span class="fa fa"></span>
+                    <li class="sub-menu"><a href="about.html">about | අපි ගැන</a><span class="fa fa"></span>
                         <ul class="submenu">
             				<li><a href="#">columns 01</a></li>
                             <li><a href="#">columns 02</a></li>
@@ -69,30 +90,50 @@
                             </li>
             			</ul>
                     </li>
-                    <li><a href="index-2.html">articles | ලිපි</a></li>
+                    <li><a href="articles.html">articles | ලිපි</a></li>
                     <li><a href="books.html">books | පොත්</a></li>
-                    <li><a href="index-4.html">contacts | අමතන්න</a></li>
+                    <li><a href="contact.html">contacts | අමතන්න</a></li>
                 </ul>
             </nav>
             <ul class="follow_icon">
                 <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
                 <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
                 <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
-                <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
-                <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
+<!--
+                <li><a><div class="col-md-1">
+                    <div class='time-frame'>
+                        <div id='date-part'></div>
+                        <div id='time-part'></div>
+                    </div>
+                </div></a> </li>
+-->
+                
             </ul>
         </header>
+        
         <div class="logo_box">
-            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="img/zodiac/newLogo8.png" alt="logo"></a></h1>
+            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="img/mainLogo.png" alt="logo"></a> <div class="col-md-3">
+                <div class="hero-circle">
+                     <div class="hero-face">
+                        <div id="hour" class="hero-hour"></div>
+                        <div id="minute" class="hero-minute"></div>
+                        <div id="second" class="hero-second"></div>
+                     </div>
+		         </div>
+                
+            </div>
+            </h1>
+            
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-sm-10 col-lg-offset-3 col-md-offset-2 col-sm-offset-1">
                     <form id="search" class="search" action="search.php" method="GET" accept-charset="utf-8">
                         <input type="text" name="s" value="" onfocus="if (this.value == '') {this.value=''}" onblur="if (this.value == '') {this.value=''}">
                         <a href="#" onClick="document.getElementById('search').submit()">search</a>
                     </form>
-                    <time datetime="2014-01-01">Nov. 22, 2014</time>
                 </div>
+               
             </div>
+            
         </div>
     </div>
 </div>
@@ -106,17 +147,17 @@
         <div class="box box2 wow fadeInUp" data-wow-delay="0.2s">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/taurus.png" alt=""></figure>
-            <strong>taurus</strong>
+            <strong>taurus | වෘෂභ</strong>
         </div>
         <div class="box box3 wow fadeInUp" data-wow-delay="0.1s">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/gemini-male-twins-zodiac-sign-symbol.png" alt=""></figure>
-            <strong>gemini</strong>
+            <strong>gemini | මිථුන</strong>
         </div>
         <div class="box box4 wow fadeInUp">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/cancer.png" alt=""></figure>
-            <strong>cancer</strong>
+            <strong>cancer | කටක</strong>
         </div>
         
         <div class="box box5 wow fadeInUp" data-wow-delay="0.3s">
@@ -137,23 +178,23 @@
         <div class="box box8 wow fadeInUp">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/scorpio.png" alt=""></figure>
-            <strong>scorpio</strong>
+            <strong>scorpio | වෘෂ්චික</strong>
         </div>
         
         <div class="box box9 wow fadeInUp" data-wow-delay="0.3s">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/sagittarius-sign.png" alt=""></figure>
-            <strong>sagittarius</strong>
+            <strong>sagittarius | ධනු</strong>
         </div>
         <div class="box box10 wow fadeInUp" data-wow-delay="0.2s">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
-            <figure><img src="img/zodiac/capricorn.png" alt=""></figure>
-            <strong>capricorn</strong>
+            <figure><img src="img/zodiac/capricorn-3.png" alt=""></figure>
+            <strong>capricorn | මකර</strong>
         </div>
         <div class="box box11 wow fadeInUp" data-wow-delay="0.1s">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
             <figure><img src="img/zodiac/aquarius-astrological-sign-symbol-1.png" alt=""></figure>
-            <strong>aquarius</strong>
+            <strong>aquarius | කුම්භ</strong>
         </div>
         <div class="box box12 wow fadeInUp">
             <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">read more</a></div>
@@ -325,7 +366,7 @@
 <!--footer-->
 <footer> 
     <div class="container">
-        <figure><img src="img/zodiac/newLogofooter.png" alt=""></figure><br/>
+        <figure><img src="img/mainLogofooter.png" alt=""></figure><br/>
         <p>&copy; <em id="copyright-year"></em> <span>|</span> <a href="index-5.html">Privacy Policy</a></p>
     </div>
   <!-- {%FOOTER_LINK} -->
